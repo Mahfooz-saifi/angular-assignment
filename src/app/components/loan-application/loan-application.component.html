@@ -1,0 +1,61 @@
+<div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-3">
+      <p-card>
+        <ng-template pTemplate="header">
+          <i class="pi pi-chart-line"></i>
+          Sales Statistics
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p-chart type="bar" [data]="data"></p-chart>
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3 dash-space">
+      <p-card>
+        <ng-template pTemplate="header">
+          <i class="pi pi-dollar"></i>
+          Revenue
+        </ng-template>
+        <ng-template pTemplate="content">
+          <div class="dashboard-summary">
+            <span class="dashboard-amount">$20,000</span>
+            <p>Total Revenue for the last month</p>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+     </div>
+     <div class="p-grid dash-space">
+        <div class="p-col-12">
+          <p-card>
+            <ng-template pTemplate="header">
+              <i class="pi pi-table"></i>
+              Loan Details
+            </ng-template>
+            <ng-template pTemplate="content">
+              <p-table [value]="loanData">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Company</th>
+                    <th>Website</th>
+                    <th>Address</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-loanData>
+                  <tr>
+                    <td>{{ loanData.id }}</td>
+                    <td>{{ loanData.name }}</td>
+                    <td>{{ loanData.username }}</td>
+                    <td>{{ loanData.company.name }}</td>
+                    <td>{{ loanData.website }}</td>
+                    <td>{{ loanData.address.city }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </ng-template>
+          </p-card>
+        </div>
+      </div>
